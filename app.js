@@ -6,7 +6,7 @@ var apos = require('apostrophe')({
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and
   // configuring user accounts.
-
+  bundles: [ 'apostrophe-blog' ],
   modules: {
     'link-widgets': {},
     'twocolumn-widgets': {},
@@ -14,7 +14,9 @@ var apos = require('apostrophe')({
     'hero-widgets': {},
     'card-widgets': {},
     'image-widgets':{},
-
+    'apostrophe-blog': {},
+    'apostrophe-blog-pages': {},
+    'apostrophe-blog-widgets': {},
     // Apostrophe module configuration
 
     // Note: most configuration occurs in the respective
