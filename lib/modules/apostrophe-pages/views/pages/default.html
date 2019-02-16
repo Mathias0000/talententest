@@ -1,14 +1,94 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block extraHead %}
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // Get all "navbar-burger" elements
+    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(function($el) {
+        $el.addEventListener('click', function() {
+
+          // Get the target from the "data-target" attribute
+          var target = $el.dataset.target;
+          var $target = document.getElementById(target);
+
+          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+          $el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+</script>
+
+{% endblock %}
+{% block beforeMain %}
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+
+
+    <div class="navbar-brand">
+      <!-- <a class="navbar-item" href="https://bulma.io">
+      <img src="img/JBA logo-1.jpg" width="33" height="28">
+    </a> -->
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+
+        {% for tab in data.home._children %}
+          {% if tab._children.length > 0 %}
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a href="{{ tab._url }}" class="navbar-link">
+              {{ tab.title }}
+            </a>
+            <div class="navbar-dropdown is-boxed">
+              {% for subtab in tab._children %}
+              <a href="{{ subtab._url }}" class="navbar-item">
+                {{ subtab.title }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          {% else %}
+          <a href="{{ tab._url }}" class="navbar-item">
+          {{ tab.title }}
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="/login">
+            <strong>Log in</strong>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{% endblock %}
 {% block main %}
 
-    {{ apos.area(data.page, 'body', {
-  widgets: {
-    'apostrophe-rich-text': {
-      toolbar: [ 'Bold', 'Italic' ]
-    },
-    hero: {}
-  }
-}) }}
-
+{{ apos.area(data.page, 'body', { widgets: { 'apostrophe-rich-text': { toolbar: [ 'Bold', 'Italic' ] }, hero: {}, herofullpage: {} } }) }}
 {% endblock %}

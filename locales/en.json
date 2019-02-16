@@ -138,5 +138,19 @@
 	"Edit %s": "Edit %s",
 	"Add File": "Add File",
 	"Search Files...": "Search Files...",
-	"Add Image": "Add Image"
+	"Add Image": "Add Image",
+	"New Search": "New Search",
+	"An error occurred.": "An error occurred.",
+	"HeroFullPage": "HeroFullPage",
+	"Edit HeroFullPage": "Edit HeroFullPage",
+	"Save HeroFullPage": "Save HeroFullPage",
+	"Where will you be staying?": "Where will you be staying?",
+	"On Campus": "On Campus",
+	"Off Campus": "Off Campus",
+	"Small": "Small",
+	"Medium": "Medium",
+	"Large": "Large",
+	"Fullheight": "Fullheight",
+	"Fullheight with navbar": "Fullheight with navbar",
+	"Height of hero": "Height of hero"
 }

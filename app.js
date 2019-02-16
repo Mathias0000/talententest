@@ -12,11 +12,27 @@ var apos = require('apostrophe')({
     'twocolumn-widgets': {},
     'threecolumn-widgets': {},
     'hero-widgets': {},
+    'herofullpage-widgets': {},
     'card-widgets': {},
     'image-widgets':{},
     'apostrophe-blog': {},
     'apostrophe-blog-pages': {},
     'apostrophe-blog-widgets': {},
+
+    'apostrophe-pages': {
+        filters: {
+          // Grab our ancestor pages, with two levels of subpages
+          ancestors: {
+            children: {
+              depth: 2
+            }
+          },
+          // We usually want children of the current page, too
+          children: true
+        }
+        // other apostrophe-pages options like `types` ...
+      },
+
     // Apostrophe module configuration
 
     // Note: most configuration occurs in the respective
