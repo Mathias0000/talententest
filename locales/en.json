@@ -152,5 +152,7 @@
 	"Large": "Large",
 	"Fullheight": "Fullheight",
 	"Fullheight with navbar": "Fullheight with navbar",
-	"Height of hero": "Height of hero"
+	"Height of hero": "Height of hero",
+	"You were unable to take control of the document.": "You were unable to take control of the document.",
+	"Edit Rich Text": "Edit Rich Text"
 }

@@ -15,6 +15,7 @@ var apos = require('apostrophe')({
     'herofullpage-widgets': {},
     'card-widgets': {},
     'image-widgets':{},
+    
     'apostrophe-blog': {},
     'apostrophe-blog-pages': {},
     'apostrophe-blog-widgets': {},
